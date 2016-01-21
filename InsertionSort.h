@@ -16,4 +16,14 @@ public:
 				swap(v[j], v[j - 1]);
 		}
 	}
+	
+	static void sort(vector<int>& v, int lo, int hi)
+	{
+		int n = v.size();
+		for (int i = lo; i <= hi; i++)
+		{
+			for (int j = i; j > lo && v[j] < v[j - 1]; j--)
+				swap(v[j], v[j - 1]);
+		} 
+	}
 };

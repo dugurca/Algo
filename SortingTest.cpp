@@ -1,10 +1,6 @@
-#pragma once
-
-#include "stdafx.h"
-#include "Rand.h"
-
 #include "InsertionSort.h"
 #include "MergeSort.h"
+#include "HybridSort.h"
 
 inline bool isSorted(vector<int>& v)
 {
@@ -14,19 +10,25 @@ inline bool isSorted(vector<int>& v)
 	return true;
 }
 
-int main_sortingTests()
+int main()
 {
 	Rand r;
 
 	for (int i = 0; i < 10; i++)
 	{
-		auto k = r.getRandIntVec(100);
+		auto k = r.getRandIntVec(1000);
 		auto k1 = k;
+		auto k2 = k;
 
 		InsertionSort::sort(k);
 		assert(isSorted(k));
+		
 		MergeSort::sort(k1);
 		assert(isSorted(k1));
+		
+		HybridSort::sort(k2);
+		assert(isSorted(k2));
+				
 	}
 
 	cout << "Sorting tests passed" << endl;

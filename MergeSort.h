@@ -21,7 +21,7 @@ public:
 		}
 	}
 
-	static void sort(vector<int>& v, vector<int> aux, int lo, int hi)
+	static void sort(vector<int>& v, vector<int>& aux, int lo, int hi)
 	{
 		if (lo >= hi) return;
 		int mid = lo + (hi - lo) / 2;
@@ -30,7 +30,7 @@ public:
 		merge(v, aux, lo, mid, hi);
 	}
 
-	static void sort(vector<int> &v)
+	static void sort(vector<int>& v)
 	{
 		int n = v.size();
 		vector<int> aux(n);
