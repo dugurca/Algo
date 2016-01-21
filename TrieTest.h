@@ -15,7 +15,7 @@ class TrieTest
 	}
 
 public:
-	bool Test1()
+	bool test1()
 	{
 		for (string line : lines)
 		{
@@ -25,7 +25,7 @@ public:
 		return true;
 	}
 
-	bool Test2()
+	bool test2()
 	{
 		vector<string> gibberishWords = 
 		{   
@@ -56,8 +56,17 @@ public:
 		return true;		
 	}
 
-	bool Test()
+	bool test()
 	{
-		return Test1() && Test2();
+		return test1() && test2();
+	}
+
+	void runTests()
+	{
+		cout << "Testing: Trie" << endl;
+		if (test())
+			cout << "All tests passed" << endl;
+		else
+			cout << "Tests failed" << endl;
 	}
 };

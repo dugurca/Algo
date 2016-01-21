@@ -13,22 +13,49 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Utils">
+      <UniqueIdentifier>{abe853fa-92d0-4b6f-899f-873d51cb46d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DataStructures">
+      <UniqueIdentifier>{aa4aaf6d-8c69-4175-bb01-424856e7d670}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\DataStructures\Trie">
+      <UniqueIdentifier>{d9b35537-4619-45c8-9f7a-61c43789c231}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Algorithms">
+      <UniqueIdentifier>{6fddf86c-1a3a-4b6f-8985-e29fcb9b41bf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Algorithms\Sorting">
+      <UniqueIdentifier>{cc4fea66-609e-44f0-89d5-066969314e64}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="MergeSort.h">
+      <Filter>Header Files\Algorithms\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="InsertionSort.h">
+      <Filter>Header Files\Algorithms\Sorting</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="Rand.h">
+      <Filter>Header Files\Utils</Filter>
+    </ClInclude>
     <ClInclude Include="Trie.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\DataStructures\Trie</Filter>
     </ClInclude>
     <ClInclude Include="TrieNode.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="FileUtils.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\DataStructures\Trie</Filter>
     </ClInclude>
     <ClInclude Include="TrieTest.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\DataStructures\Trie</Filter>
+    </ClInclude>
+    <ClInclude Include="FileUtils.h">
+      <Filter>Header Files\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -38,8 +65,11 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SortingTest.cpp">
+      <Filter>Header Files\Algorithms\Sorting</Filter>
+    </ClCompile>
     <ClCompile Include="Trie.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Header Files\DataStructures\Trie</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>
