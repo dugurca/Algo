@@ -3,3 +3,6 @@
 
 using namespace std;
 
+#include "Rand.h"
+#include "Timer.h"
+

@@ -5,6 +5,7 @@ class Rand
 {
 	random_device rd;
 	mt19937 gen;
+	
 public:
 	Rand()
 	{
