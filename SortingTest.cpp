@@ -14,7 +14,7 @@ inline bool isSorted(vector<int>& v)
 	return true;
 }
 
-int main_SortingTests()
+int main_sortingTests()
 {
 	Rand r;
 
