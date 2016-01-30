@@ -1,6 +1,5 @@
 #pragma once
 #include "stdafx.h"
-#include "InsertionSort.h"
 
 class HybridSort
 {	
@@ -22,7 +21,7 @@ public:
 		}
 	}
 
-	static void sort(vector<int>& v, vector<int>& aux, int lo, int hi, int threshold = 75)
+	static void sort(vector<int>& v, vector<int>& aux, int lo, int hi, int threshold)
 	{
 		if (lo >= hi) return;
 		if (hi - lo <= threshold) 
@@ -32,18 +31,18 @@ public:
 				for (int j = i; j > lo && v[j] < v[j - 1]; j--)
 					swap(v[j], v[j - 1]);
 			}
-			return;		
+			return;
 		}
 		int mid = lo + (hi - lo) / 2;
-		sort(v, aux, lo, mid);
-		sort(v, aux, mid + 1, hi);
+		sort(v, aux, lo, mid, threshold);
+		sort(v, aux, mid + 1, hi, threshold);
 		merge(v, aux, lo, mid, hi);
 	}
 
-	static void sort(vector<int>& v)
+	static void sort(vector<int>& v, int threshold = 10)
 	{
 		int n = v.size();
 		vector<int> aux(n);
-		sort(v, aux, 0, n - 1);
+		sort(v, aux, 0, n - 1, threshold);
 	}
 };

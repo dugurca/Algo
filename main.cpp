@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-int main()
+int main_()
 {
 	return 0;
 }

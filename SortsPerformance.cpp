@@ -1,6 +1,7 @@
 #include "MergeSort.h"
 #include "InsertionSort.h"
 #include "HybridSort.h"
+#include "MergeBU.h"
 
 double sortTime(int method, int numSize, int repeat)
 {
@@ -14,8 +15,11 @@ double sortTime(int method, int numSize, int repeat)
 		if (method == 0) MergeSort::sort(vec);
 		else if (method == 1) InsertionSort::sort(vec);
 		else if (method == 2) HybridSort::sort(vec);
+		else if (method == 3) MergeBU::sort(vec);
 		t.endTime();
 		res += t.elapsedSeconds();
+
+		assert(isSorted(vec));
 	}
 	return res / repeat;
 }
@@ -36,6 +40,7 @@ void sortsPerformanceInsertionVsMerge()
 	
 	auto mergeTimes = sortingPerf(0, arraySize, numRepeat);
 	auto inserTimes = sortingPerf(1, arraySize, numRepeat);
+	auto merBuTimes = sortingPerf(3, arraySize, numRepeat);
 	
 	for (int i = 0; i < mergeTimes.size(); i++)
 	{
@@ -45,12 +50,27 @@ void sortsPerformanceInsertionVsMerge()
 		cout << "Elements: "  << i + 1 << "  ";
 		cout << "Merge: "     << mt << "    |    " 
 		     << "Insertion: " << it << " ";
+
 		if (mt > it) cout << " *** ";
 		cout << endl;
 	}
 }
 
-void sortsPerformanceHybridVsMerge()
+string getWinner(double merge, double mergeBu, double hybrid)
+{
+	map<double, int> m;
+	m.insert(make_pair(merge, 0));
+	m.insert(make_pair(mergeBu, 1));
+	m.insert(make_pair(hybrid, 2));
+
+	auto winner = m.begin()->second;
+	if (winner == 0) return "merge";
+	if (winner == 1) return "merge Bu";
+	if (winner == 2) return "hybrid";
+	return "???";
+}
+
+void sortsPerformanceHybridVsMergeVsMergeBu()
 {
 	int startVal = 100;
 	int endVal = pow(startVal, 4);
@@ -60,18 +80,21 @@ void sortsPerformanceHybridVsMerge()
 	{
 		double mergeTime = sortTime(0, i, numRepeat);
 		double hybridTime = sortTime(2, i, numRepeat);
+		double mergeBuTime = sortTime(3, i, numRepeat);
 		
 		cout << "n: " << i << "   ";
-		cout << "merge  :   " << mergeTime << "   |   ";
-		cout << "hybrid :  " << hybridTime;
+		cout << "merge   : " << mergeTime << " | ";
+		cout << "hybrid  : " << hybridTime << " | ";
+		cout << "mergeBu : " << mergeBuTime << " ";
+		cout << " >>  ";
 		
-		if (mergeTime < hybridTime) cout << " *** ";
+		cout << getWinner(mergeTime, mergeBuTime, hybridTime);
 		cout << endl;
 	}
 }
 
-int main_()
+int main()
 {
-	sortsPerformanceHybridVsMerge();
+	sortsPerformanceHybridVsMergeVsMergeBu();
 	return 0;
 }

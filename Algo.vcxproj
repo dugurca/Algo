@@ -119,7 +119,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="FileUtils.h" />
+    <ClInclude Include="HybridSort.h" />
     <ClInclude Include="InsertionSort.h" />
+    <ClInclude Include="MergeBU.h" />
     <ClInclude Include="MergeSort.h" />
     <ClInclude Include="Rand.h" />
     <ClInclude Include="stdafx.h" />
@@ -127,10 +129,12 @@
     <ClInclude Include="Trie.h" />
     <ClInclude Include="TrieNode.h" />
     <ClInclude Include="TrieTest.h" />
+    <ClInclude Include="Utils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SortingTest.cpp" />
+    <ClCompile Include="SortsPerformance.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Trie.cpp" />
   </ItemGroup>
